@@ -1,7 +1,8 @@
-# SmarterEdu Website
+# SmarterEdu Final Website
 
-Upload **index.html** and the **assets** folder to the root of your GitHub repository.
+Upload all files directly to the ROOT of the GitHub repository:
+index.html, style.css, script.js, config.js, logo.svg, whatsapp-qr.png, README.md.
 
-Included: responsive Home, About, Courses, Premium Study Materials interface, Admissions, Contact, WhatsApp QR/click-to-chat, Google Maps and mobile layout.
+Cloudflare Pages: branch `main`, no framework, no build command, output directory `/`.
 
-Important: Premium paid PDFs must NOT be placed in this public repository. Secure authentication/payment verification/private storage must be added before selling protected notes.
+Premium Study Materials is currently a front-end presentation only. Do not place paid/private PDFs in the public GitHub repository.

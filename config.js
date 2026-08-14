@@ -1,6 +1,1 @@
-window.SMARTEREDU_CONFIG={
- phoneDisplay:"9782235256",
- whatsappUrl:"https://wa.me/919462335256",
- mapsUrl:"https://maps.app.goo.gl/jWWCp8PdBrCuT5m2A?g_st=ic",
- address:"Sadar Gali, Deshwali Mohalla, Gandhinagar, Madanganj, Kishangarh"
-};
+window.SMARTEREDU_CONFIG={phoneDisplay:"9782235256",whatsappUrl:"https://wa.me/919462335256",mapsUrl:"https://maps.app.goo.gl/jWWCp8PdBrCuT5m2A?g_st=ic",address:"Sadar Gali, Deshwali Mohalla, Gandhinagar, Madanganj, Kishangarh"};

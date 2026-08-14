@@ -1,11 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150">
-<rect width="520" height="150" fill="white"/>
-<path d="M20 80 L90 38 L160 80 L90 122 Z" fill="#0757b8"/>
-<path d="M32 82 V126 Q90 143 148 126 V82" fill="none" stroke="#0757b8" stroke-width="8"/>
-<path d="M38 55 L90 24 L142 55 L90 86 Z" fill="#0b3d91"/>
-<path d="M73 72 Q90 52 108 72 L90 99 Q72 91 73 72Z" fill="white"/>
-<path d="M92 84 L139 48" stroke="#08a66a" stroke-width="11" stroke-linecap="round"/>
-<text x="175" y="78" font-family="Arial,sans-serif" font-size="48" font-weight="800" fill="#0757b8">Smarter</text>
-<text x="372" y="78" font-family="Arial,sans-serif" font-size="48" font-weight="800" fill="#08a66a">Edu</text>
-<text x="179" y="110" font-family="Arial,sans-serif" font-size="16" fill="#333">Learn • Grow • Achieve</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150"><rect width="520" height="150" fill="white"/><path d="M20 80L90 38l70 42-70 42z" fill="#0757b8"/><path d="M32 82v44q58 17 116 0V82" fill="none" stroke="#0757b8" stroke-width="8"/><path d="M38 55L90 24l52 31-52 31z" fill="#0b3d91"/><path d="M73 72q17-20 35 0l-18 27q-18-8-17-27z" fill="white"/><path d="M92 84l47-36" stroke="#08a66a" stroke-width="11" stroke-linecap="round"/><text x="175" y="78" font-family="Arial" font-size="48" font-weight="800" fill="#0757b8">Smarter</text><text x="372" y="78" font-family="Arial" font-size="48" font-weight="800" fill="#08a66a">Edu</text><text x="179" y="110" font-family="Arial" font-size="16" fill="#333">Learn • Grow • Achieve</text></svg>

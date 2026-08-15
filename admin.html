@@ -3,57 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SmarterEdu Admin | Premium Content</title>
+<title>SmarterEdu Admin</title>
 <link rel="stylesheet" href="admin.css">
 </head>
 <body>
+<div id="loginView" class="login-wrap">
+  <div class="login-card">
+    <img src="logo.png" alt="SmarterEdu" class="login-logo">
+    <div class="eyebrow">SECURE ADMIN</div>
+    <h1>SmarterEdu Admin</h1>
+    <p>Sign in to manage premium study materials.</p>
+    <form id="loginForm">
+      <label>Email<input id="loginEmail" type="email" autocomplete="username" required></label>
+      <label>Password<input id="loginPassword" type="password" autocomplete="current-password" required></label>
+      <button class="primary full" type="submit">Sign in</button>
+      <div id="loginMsg" class="message"></div>
+    </form>
+  </div>
+</div>
+
+<div id="appView" class="hidden">
 <header class="admin-header">
   <div class="admin-brand"><img src="logo.png" alt="SmarterEdu"><span>Admin Panel</span></div>
-  <a href="index.html" class="view-site">View Website ↗</a>
+  <div class="header-actions"><span id="adminEmail"></span><a href="index.html" class="view-site">View Website ↗</a><button id="logoutBtn" class="logout">Logout</button></div>
 </header>
-
 <main class="admin-wrap">
-  <aside class="sidebar">
-    <div class="admin-user"><div class="avatar">S</div><div><strong>SmarterEdu</strong><small>Administrator</small></div></div>
-    <button class="side active" data-tab="dashboard">▦ Dashboard</button>
-    <button class="side" data-tab="content">▤ Premium Content</button>
-    <button class="side" data-tab="add">＋ Add Content</button>
-    <button class="side" data-tab="orders">◷ Purchases <span class="soon">Soon</span></button>
-    <button class="side" data-tab="students">♙ Students <span class="soon">Soon</span></button>
-    <div class="side-note">Secure login, database, private PDF storage and Razorpay will be connected in the next setup stage.</div>
-  </aside>
-
-  <section class="panel">
-    <div id="dashboard" class="tab active">
-      <div class="title"><div><small>ADMIN DASHBOARD</small><h1>Premium Content</h1><p>Manage your paid study materials from one place.</p></div><button class="primary" data-go="add">＋ Add Premium Content</button></div>
-      <div class="stats"><div><span>Published</span><strong id="statPublished">3</strong></div><div><span>Drafts</span><strong id="statDrafts">0</strong></div><div><span>Total Products</span><strong id="statTotal">3</strong></div><div><span>Sales</span><strong>—</strong><small>Razorpay coming next</small></div></div>
-      <div class="card"><div class="card-title"><h2>Current Premium Products</h2><button class="text-btn" data-go="content">Manage all →</button></div><div id="dashList"></div></div>
-    </div>
-
-    <div id="content" class="tab">
-      <div class="title"><div><small>CONTENT LIBRARY</small><h1>Premium Content</h1><p>Add, update, publish or remove your study materials.</p></div><button class="primary" data-go="add">＋ Add Content</button></div>
-      <div class="card"><div id="contentList"></div></div>
-    </div>
-
-    <div id="add" class="tab">
-      <div class="title"><div><small>CONTENT MANAGEMENT</small><h1>Add Premium Content</h1><p>Create a product now. Payment and secure delivery will be connected later.</p></div></div>
-      <form id="contentForm" class="card form-grid">
-        <label>Title<input id="fTitle" required placeholder="Class 10 Mathematics Complete Notes"></label>
-        <label>Class<select id="fClass"><option>LKG–5th</option><option>6th–8th</option><option>9th–10th</option><option>Class 11</option><option>Class 12</option></select></label>
-        <label>Subject<input id="fSubject" required placeholder="Mathematics"></label>
-        <label>Price (₹)<input id="fPrice" required type="number" min="0" placeholder="99"></label>
-        <label class="wide">Description<textarea id="fDesc" required placeholder="What students will receive..."></textarea></label>
-        <label class="wide">PDF file<input id="fFile" type="file" accept=".pdf,application/pdf"><small id="fileName">No file selected</small></label>
-        <label>Status<select id="fStatus"><option value="published">Published</option><option value="draft">Draft</option></select></label>
-        <div class="form-actions wide"><button type="button" class="secondary" data-go="content">Cancel</button><button class="primary" type="submit">Save Content</button></div>
-      </form>
-      <div class="warning">Prototype note: files and records are currently saved only in this browser. Do not upload confidential or paid PDFs here yet. The next stage will move them to protected cloud storage.</div>
-    </div>
-
-    <div id="orders" class="tab"><div class="title"><div><small>SALES</small><h1>Purchases</h1><p>Razorpay payment records will appear here after integration.</p></div></div><div class="empty">No payment system connected yet.</div></div>
-    <div id="students" class="tab"><div class="title"><div><small>ACCESS CONTROL</small><h1>Students</h1><p>Student accounts and purchased-content access will be connected after authentication is added.</p></div></div><div class="empty">Student management is not connected yet.</div></div>
-  </section>
+<aside class="sidebar">
+  <div class="admin-user"><div class="avatar">S</div><div><strong>SmarterEdu</strong><small>Administrator</small></div></div>
+  <button class="side active" data-tab="dashboard">▦ Dashboard</button>
+  <button class="side" data-tab="content">▤ Premium Content</button>
+  <button class="side" data-tab="add">＋ Add Content</button>
+  <button class="side" data-tab="orders">◷ Purchases <span class="soon">Next</span></button>
+  <button class="side" data-tab="students">♙ Students <span class="soon">Next</span></button>
+  <div class="side-note">Your PDFs are stored in the private <b>premium-files</b> bucket. Payment and student access will be connected later.</div>
+</aside>
+<section class="panel">
+  <div id="dashboard" class="tab active">
+    <div class="title"><div><small>ADMIN DASHBOARD</small><h1>Premium Content</h1><p>Manage your paid study materials from one place.</p></div><button class="primary" data-go="add">＋ Add Premium Content</button></div>
+    <div class="stats"><div><span>Published</span><strong id="statPublished">0</strong></div><div><span>Drafts</span><strong id="statDrafts">0</strong></div><div><span>Total Products</span><strong id="statTotal">0</strong></div><div><span>Sales</span><strong>—</strong><small>Razorpay coming next</small></div></div>
+    <div class="card"><div class="card-title"><h2>Current Premium Products</h2><button class="text-btn" data-go="content">Manage all →</button></div><div id="dashList"></div></div>
+  </div>
+  <div id="content" class="tab">
+    <div class="title"><div><small>CONTENT LIBRARY</small><h1>Premium Content</h1><p>Products saved in your Supabase database.</p></div><button class="primary" data-go="add">＋ Add Content</button></div>
+    <div class="card"><div id="contentList"></div></div>
+  </div>
+  <div id="add" class="tab">
+    <div class="title"><div><small>CONTENT MANAGEMENT</small><h1 id="formHeading">Add Premium Content</h1><p>Save product details and optionally upload its PDF to private storage.</p></div></div>
+    <form id="contentForm" class="card form-grid">
+      <input id="fId" type="hidden">
+      <label>Title<input id="fTitle" required placeholder="Class 10 Mathematics Complete Notes"></label>
+      <label>Class<select id="fClass"><option>LKG–5th</option><option>6th–8th</option><option>9th–10th</option><option>Class 11</option><option>Class 12</option></select></label>
+      <label>Subject<input id="fSubject" required placeholder="Mathematics"></label>
+      <label>Price (₹)<input id="fPrice" required type="number" min="0" step="0.01" placeholder="99"></label>
+      <label class="wide">Description<textarea id="fDesc" required placeholder="What students will receive..."></textarea></label>
+      <label class="wide">PDF file<input id="fFile" type="file" accept="application/pdf,.pdf"><small id="fileName">No file selected. Leave empty when editing to keep the current PDF.</small></label>
+      <label>Status<select id="fStatus"><option value="published">Published</option><option value="draft">Draft</option></select></label>
+      <div class="form-actions wide"><button type="button" class="secondary" data-go="content">Cancel</button><button class="primary" type="submit" id="saveBtn">Save Content</button></div>
+      <div id="formMsg" class="message wide"></div>
+    </form>
+  </div>
+  <div id="orders" class="tab"><div class="title"><div><small>SALES</small><h1>Purchases</h1><p>Razorpay payment records will be connected in the next stage.</p></div></div><div class="empty">Payment system not connected yet.</div></div>
+  <div id="students" class="tab"><div class="title"><div><small>ACCESS CONTROL</small><h1>Students</h1><p>Student accounts and purchased-content access will be connected after the payment stage.</p></div></div><div class="empty">Student management is not connected yet.</div></div>
+</section>
 </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="admin-config.js"></script>
 <script src="admin.js"></script>
 </body>
 </html>
